@@ -43,8 +43,8 @@
 
     .card {
       position: relative;
-      width: 360px;
-      padding: 2.75rem 2.5rem 3rem;
+      width: 480px;
+      padding: 3rem 2.5rem 3rem;
       border-radius: 1.5rem;
       background: var(--card);
       backdrop-filter: blur(18px) saturate(140%);
@@ -131,14 +131,6 @@
       color: var(--muted);
       letter-spacing: 0.08em;
     }
-
-    .counter {
-      margin-top: 1rem;
-      text-align: center;
-      font-size: 0.9rem;
-      color: var(--accent);
-      letter-spacing: 0.05em;
-    }
   </style>
 </head>
 <body>
@@ -154,11 +146,9 @@
 
     <div class="result" id="result">—</div>
     <div class="hint">inclusive integer range</div>
-    <div class="counter" id="visitorCount">Page views: 0</div>
   </div>
 
   <script>
-    // RNG function
     function generate() {
       const min = Number(document.getElementById('min').value);
       const max = Number(document.getElementById('max').value);
@@ -181,14 +171,6 @@
         }
       }, 40);
     }
-
-    // Simple page view counter using localStorage
-    const countEl = document.getElementById('visitorCount');
-    let views = localStorage.getItem('pageViews');
-    if (!views) views = 0;
-    views = parseInt(views) + 1;
-    localStorage.setItem('pageViews', views);
-    countEl.textContent = 'Page views: ' + views;
   </script>
 </body>
 </html>
